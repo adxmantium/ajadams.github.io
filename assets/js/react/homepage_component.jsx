@@ -1,9 +1,21 @@
 
+$.fn.rotate = function(deg){
+	$(this).css({'-webkit-transform': 'rotate('+deg+'deg)',
+				'-moz-transform': 'rotate('+deg+'deg)',
+				'-ms-trasform': 'rotate('+deg+'deg)',
+				'trasform': 'rotate('+deg+'deg)'});
+	return $(this);
+}
+
 var Clock_Component = React.createClass({
 	getInitialState: function(){
 		return {
 
 		};
+	},
+
+	componentDidMount: function(){
+		this.runClock();
 	},
 
 	runClock: function(){
@@ -20,6 +32,7 @@ var Clock_Component = React.createClass({
 
 			if( rotate_sec === 360 )
 				rotate_sec = 0;
+
 		}, 1000);
 	},
 

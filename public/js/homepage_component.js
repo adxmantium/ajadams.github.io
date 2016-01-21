@@ -1,5 +1,41 @@
 
+$.fn.rotate = function(deg){
+	$(this).css({'-webkit-transform': 'rotate('+deg+'deg)',
+				'-moz-transform': 'rotate('+deg+'deg)',
+				'-ms-trasform': 'rotate('+deg+'deg)',
+				'trasform': 'rotate('+deg+'deg)'});
+	return $(this);
+}
+
 var Clock_Component = React.createClass({displayName: "Clock_Component",
+	getInitialState: function(){
+		return {
+
+		};
+	},
+
+	componentDidMount: function(){
+		this.runClock();
+	},
+
+	runClock: function(){
+		var sec = $('.sec'),
+			min = $('.min'),
+			hr = $('.hr'),
+			rotate_sec = 0,
+			rotate_min = 90,
+			rotate_hr = 180;
+
+		setInterval(function(){
+			sec.rotate(rotate_sec);
+			rotate_sec += 6;
+
+			if( rotate_sec === 360 )
+				rotate_sec = 0;
+
+		}, 1000);
+	},
+
 	render: function(){
 		return (
 			React.createElement("div", {className: "clock"}, 
