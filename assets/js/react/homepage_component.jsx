@@ -34,6 +34,23 @@ var Clock_Component = React.createClass({
 				rotate_sec = 0;
 
 		}, 1000);
+
+		setInterval(function(){
+			min.rotate(rotate_min);
+			rotate_min += 6;
+
+			if( rotate_min === 360 )
+				rotate_min = 0;
+
+		}, 60000);
+
+		setInterval(function(){
+			hr.rotate(rotate_hr);
+			rotate_hr += 6;
+
+			if( rotate_hr === 360 )
+				rotate_hr = 0;
+		}, 3600000);
 	},
 
 	render: function(){
