@@ -33,7 +33,7 @@ gulp.task('concat-js', function(){
 			'assets/js/react-with-addons.min.js', 
 			'assets/js/react-dom.min.js',
 			])
-		.pipe(concat('libraries.js'))
+		.pipe(concat('libraries.min.js'))
 		.pipe(gulp.dest('public/js'));
 });
 
