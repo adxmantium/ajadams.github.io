@@ -82,6 +82,7 @@ var Clock_Component = React.createClass({displayName: "Clock_Component",
 
 var Homepage_Component = React.createClass({displayName: "Homepage_Component",
 	render: function(){
+		var title = 'Portfolio - under construction. Please bare with me :)';
 		return (
 			React.createElement("div", {className: "inner-main-container"}, 
 
@@ -91,7 +92,10 @@ var Homepage_Component = React.createClass({displayName: "Homepage_Component",
 				), 
 
 				React.createElement("div", {className: "content-container"}, 
-					React.createElement("h1", null, "Portfolio")
+					React.createElement("h1", null, title), 
+
+					React.createElement("h3", null, "Checkout my Todo App!"), 
+					React.createElement("div", null, React.createElement("a", {href: "http://ajadams.github.io/Adams-ToDo-App/"}, "Finito"))
 				)
 
 			)

@@ -82,6 +82,7 @@ var Clock_Component = React.createClass({
 
 var Homepage_Component = React.createClass({
 	render: function(){
+		var title = 'Portfolio - under construction. Please bare with me :)';
 		return (
 			<div className="inner-main-container">
 
@@ -91,7 +92,10 @@ var Homepage_Component = React.createClass({
 				</div>
 
 				<div className="content-container">
-					<h1>Portfolio</h1>
+					<h1>{title}</h1>
+
+					<h3>Checkout my Todo App!</h3>
+					<div><a href="http://ajadams.github.io/Adams-ToDo-App/">Finito</a></div>
 				</div>
 
 			</div>

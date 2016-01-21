@@ -84,3 +84,6 @@
       border: thin solid red; }
   .clock .sec:after {
     clear: both; }
+
+.content-container {
+  text-align: center; }
