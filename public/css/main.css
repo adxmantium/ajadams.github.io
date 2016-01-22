@@ -1,5 +1,5 @@
 /* main.scss */
-#main-container, .background-layer, .opaque-layer {
+#main-container, .opaque-layer {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -7,15 +7,21 @@
   left: 0; }
 
 .background-layer {
-  z-index: -1; }
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  background: #eee; }
 
 .opaque-layer {
-  background: rgba(255, 255, 255, 0.8); }
+  background: rgba(238, 238, 238, 0.8); }
 
 .clock {
   border: 8px solid #797979;
-  height: 180px;
-  width: 180px;
+  height: 300px;
+  width: 300px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -31,7 +37,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -3px 0 0 -3px; }
+    margin: -4px 0 0 -4px; }
   .clock .left {
     float: left;
     width: 48%;
@@ -52,7 +58,7 @@
       width: 60%;
       margin: 0 auto; }
     .clock .hr .left {
-      border: 2px solid green; }
+      border: 2px solid #797979; }
   .clock .hr:after {
     clear: both; }
   .clock .min {
@@ -66,7 +72,7 @@
       width: 80%;
       margin: 0 auto; }
     .clock .min .left {
-      border: 2px solid blue; }
+      border: 2px solid #797979; }
   .clock .min:after {
     clear: both; }
   .clock .sec {
@@ -78,10 +84,10 @@
     transform: rotate(145deg);
     clear: both; }
     .clock .sec .hand {
-      width: 87%;
+      width: 80%;
       margin: 0 auto; }
     .clock .sec .left {
-      border: thin solid red; }
+      border: thin solid #ff0000; }
   .clock .sec:after {
     clear: both; }
 

@@ -70,4 +70,4 @@ gulp.task('jsx', function () {
 
 // Default Task
 // gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);
-gulp.task('default', ['sass', 'jsx', 'concat-js']);
+gulp.task('default', ['sass', 'jsx']);

@@ -1,9 +1,10 @@
 /* main.scss */
 
 $darkgray: #797979;
-$hourHandColor: green;
-$minHandColor: blue;
-$secHandColor: red;
+$hourHandColor: #797979;
+$minHandColor: #797979;
+$secHandColor: #ff0000;
+$clockDimensions: 300px;
 
 @mixin absolutelyAbsolute($temp){
 	position: absolute;
@@ -20,7 +21,7 @@ $secHandColor: red;
           border-radius: $radius;
 }
 
-#main-container, .background-layer, .opaque-layer{
+#main-container, .opaque-layer{
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -28,22 +29,24 @@ $secHandColor: red;
 	left: 0;
 }
 
-.inner-main-container{
-	
-}
-
 .background-layer{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
 	z-index: -1;
+	background: #eee;
 }
 
 .opaque-layer{
-	background: rgba(255, 255, 255, 0.8);
+	background: rgba(238, 238, 238, 0.8);
 }
 
 .clock{
 	border: 8px solid #797979;
-	height: 180px;
-	width: 180px;
+	height: $clockDimensions;
+	width: $clockDimensions;
 	@include border-radius(50%);
 	margin: 140px auto 0;
 	position: relative;
@@ -57,7 +60,7 @@ $secHandColor: red;
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		margin: -3px 0 0 -3px;
+		margin: -4px 0 0 -4px;
 	}
 
 	.left{
@@ -120,7 +123,7 @@ $secHandColor: red;
 		clear: both;
 
 		.hand{
-			width: 87%;
+			width: 80%;
 			margin: 0 auto;
 		}
 
