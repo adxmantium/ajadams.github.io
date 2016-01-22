@@ -7,6 +7,7 @@ $.fn.rotate = function(deg){
 	return $(this);
 }
 
+// -- start of Background component
 var Clock_Component = React.createClass({
 	getInitialState: function(){
 		return {
@@ -80,24 +81,53 @@ var Clock_Component = React.createClass({
 	}
 });
 
+var Background_Layer_Component = React.createClass({
+	render: function(){
+		return (
+			<div className="background-layer">
+				<Clock_Component />
+				<div className="opaque-layer"></div>
+			</div>
+		);
+	}
+});
+
+var Header_Component = React.createClass({
+	render: function(){
+		var header = 'I.Am.Adam Adams.';
+		return (
+			<div className="container-fluid text-center">
+				<div className="row">
+					<div className="col-xs-12">
+						<h1>{header}</h1>
+					</div>
+				</div>
+			</div>
+		);
+	}
+});
+
+// -- Start of Content Container
+var Content_Container_Component = React.createClass({
+	render: function(){
+		return (
+			<div className="content-container">
+				<Header_Component />
+				<div className="text-center">My ToDo App: <a href="http://ajadams.github.io/Adams-ToDo-App/">Finito</a></div>
+				<div className="text-center"><h2>Currently under construction.</h2></div>
+				<div className="text-center">{ String.fromCharCode(169) + ' 2016 Adam Adams' }</div>
+			</div>
+		);
+	}
+});
+
+// -- main top level component that houses entire page
 var Homepage_Component = React.createClass({
 	render: function(){
-		var title = 'Portfolio - under construction. Please bare with me :)';
 		return (
 			<div className="inner-main-container">
-
-				<div className="background-layer">
-					<Clock_Component />
-					<div className="opaque-layer"></div>
-				</div>
-
-				<div className="content-container">
-					<h1>{title}</h1>
-
-					<h3>Checkout my Todo App!</h3>
-					<div><a href="http://ajadams.github.io/Adams-ToDo-App/">Finito</a></div>
-				</div>
-
+				<Background_Layer_Component />
+				<Content_Container_Component />
 			</div>
 		);
 	}

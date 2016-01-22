@@ -7,6 +7,7 @@ $.fn.rotate = function(deg){
 	return $(this);
 }
 
+// -- start of Background component
 var Clock_Component = React.createClass({displayName: "Clock_Component",
 	getInitialState: function(){
 		return {
@@ -80,24 +81,53 @@ var Clock_Component = React.createClass({displayName: "Clock_Component",
 	}
 });
 
+var Background_Layer_Component = React.createClass({displayName: "Background_Layer_Component",
+	render: function(){
+		return (
+			React.createElement("div", {className: "background-layer"}, 
+				React.createElement(Clock_Component, null), 
+				React.createElement("div", {className: "opaque-layer"})
+			)
+		);
+	}
+});
+
+var Header_Component = React.createClass({displayName: "Header_Component",
+	render: function(){
+		var header = 'I.Am.Adam Adams.';
+		return (
+			React.createElement("div", {className: "container-fluid text-center"}, 
+				React.createElement("div", {className: "row"}, 
+					React.createElement("div", {className: "col-xs-12"}, 
+						React.createElement("h1", null, header)
+					)
+				)
+			)
+		);
+	}
+});
+
+// -- Start of Content Container
+var Content_Container_Component = React.createClass({displayName: "Content_Container_Component",
+	render: function(){
+		return (
+			React.createElement("div", {className: "content-container"}, 
+				React.createElement(Header_Component, null), 
+				React.createElement("div", {className: "text-center"}, "My ToDo App: ", React.createElement("a", {href: "http://ajadams.github.io/Adams-ToDo-App/"}, "Finito")), 
+				React.createElement("div", {className: "text-center"}, React.createElement("h2", null, "Currently under construction.")), 
+				React.createElement("div", {className: "text-center"},  String.fromCharCode(169) + ' 2016 Adam Adams')
+			)
+		);
+	}
+});
+
+// -- main top level component that houses entire page
 var Homepage_Component = React.createClass({displayName: "Homepage_Component",
 	render: function(){
-		var title = 'Portfolio - under construction. Please bare with me :)';
 		return (
 			React.createElement("div", {className: "inner-main-container"}, 
-
-				React.createElement("div", {className: "background-layer"}, 
-					React.createElement(Clock_Component, null), 
-					React.createElement("div", {className: "opaque-layer"})
-				), 
-
-				React.createElement("div", {className: "content-container"}, 
-					React.createElement("h1", null, title), 
-
-					React.createElement("h3", null, "Checkout my Todo App!"), 
-					React.createElement("div", null, React.createElement("a", {href: "http://ajadams.github.io/Adams-ToDo-App/"}, "Finito"))
-				)
-
+				React.createElement(Background_Layer_Component, null), 
+				React.createElement(Content_Container_Component, null)
 			)
 		);
 	}
