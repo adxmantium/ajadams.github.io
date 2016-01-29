@@ -5818,14 +5818,14 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
-#main-container, .opaque-layer {
+.opaque-layer {
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0; }
 
-.background-layer {
+#background-container {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -5909,3 +5909,22 @@ button.close {
       border: thin solid #ff0000; }
   .clock .sec:after {
     clear: both; }
+
+a:hover {
+  text-decoration: none; }
+
+.single {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+  background: #fff;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+  padding: 0 5px 30px;
+  margin-bottom: 10px; }
+  .single a {
+    color: #202020; }
+
+@media (max-width: 768px) {
+  .single {
+    margin-bottom: 10px; } }

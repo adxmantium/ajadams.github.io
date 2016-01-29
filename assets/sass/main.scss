@@ -22,7 +22,7 @@ $clockDimensions: 300px;
           border-radius: $radius;
 }
 
-#main-container, .opaque-layer{
+.opaque-layer{
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -30,7 +30,7 @@ $clockDimensions: 300px;
 	left: 0;
 }
 
-.background-layer{
+#background-container{
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -134,5 +134,27 @@ $clockDimensions: 300px;
 	}
 	.sec:after{
 		clear: both;
+	}
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+.single{
+	@include border-radius(2px);
+	background: #fff;
+	box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+	padding: 0 5px 30px;
+	margin-bottom: 10px;
+
+	a{
+		color: #202020;
+	}
+}
+
+@media (max-width: 768px){
+	.single{
+		margin-bottom: 10px;
 	}
 }
