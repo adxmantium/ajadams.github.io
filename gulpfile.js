@@ -16,6 +16,12 @@ var jshint = require('gulp-jshint'),
 //         .pipe(jshint())
 //         .pipe(jshint.reporter('default'));
 // });
+gulp.task('fonts', function(){
+	gulp.src([
+		'node_modules/font-awesome/fonts/*'
+	]).pipe(gulp.dest('public/css/fonts'));
+});
+
 gulp.task('copy', function(){
 	gulp.src([
 	    'node_modules/react/dist/react-with-addons.min.js',
@@ -70,4 +76,4 @@ gulp.task('jsx', function () {
 
 // Default Task
 // gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);
-gulp.task('default', ['sass', 'jsx']);
+gulp.task('default', ['jsx', 'sass']);

@@ -2,11 +2,9 @@
 var Nav_Component = React.createClass({displayName: "Nav_Component",
 	render: function(){
 		return (
-			React.createElement("div", {className: "nav-container"}, 
-				"// ", React.createElement("div", {className: "row"}, 
-				"//  // ", React.createElement(Single_Project_Component, {title: 'Finito', subtitle: 'A friendly, easy to use, to-do app to manage your tasks', url: 'http://ajadams.github.io/Adams-ToDo-App/'}), 
-				"//  // ", React.createElement(Single_Project_Component, {title: 'PianoKeys', subtitle: 'A basic representation of a piano with a feature to autoplay the piano', url: 'http://ajadams.github.io/piano-keys/'}), 
-				"// ")
+			React.createElement("div", {className: "nav-container text-center"}, 
+				React.createElement("div", null, React.createElement("i", {className: "fa fa-user fa-2x aboutme"})), 
+				React.createElement("div", null, React.createElement("i", {className: "fa fa-code fa-2x projects"}))
 			)
 		);
 	}

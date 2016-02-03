@@ -5925,6 +5925,29 @@ a:hover {
   .single a {
     color: #202020; }
 
+/*nav container*/
+.nav-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  padding: 25% 0 0; }
+  .nav-container .fa {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    background: #24b26b;
+    color: #fff;
+    margin: 0 0 5px;
+    box-shadow: 1px 1px 1px 0px black;
+    cursor: pointer; }
+    .nav-container .fa.aboutme {
+      padding: 10px 14px; }
+    .nav-container .fa.projects {
+      padding: 10px; }
+
 @media (max-width: 768px) {
   .single {
     margin-bottom: 10px; } }

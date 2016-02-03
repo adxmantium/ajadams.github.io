@@ -2,11 +2,9 @@
 var Nav_Component = React.createClass({
 	render: function(){
 		return (
-			<div className="nav-container">
-				// <div className="row">
-				// 	// <Single_Project_Component title={'Finito'} subtitle={'A friendly, easy to use, to-do app to manage your tasks'} url={'http://ajadams.github.io/Adams-ToDo-App/'} />
-				// 	// <Single_Project_Component title={'PianoKeys'} subtitle={'A basic representation of a piano with a feature to autoplay the piano'} url={'http://ajadams.github.io/piano-keys/'} />
-				// </div>
+			<div className="nav-container text-center">
+				<div><i className="fa fa-user fa-2x aboutme"></i></div>
+				<div><i className="fa fa-code fa-2x projects"></i></div>
 			</div>
 		);
 	}
